@@ -1,11 +1,18 @@
-//  let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let x=0;
+ for (let index of numbers){
+     x+=index
+    console.log(x)
+}
+ 
 // ################################### Exercicio 1
 // Percorra o array imprimindo todos os valores nele contidos com a função console.log():
 // for (let i=0; i<numbers.length; i++){
 //     console.log(numbers[i]);
 // }
-
+for (let index of numbers){
+    console.log(index);
+}
 // ################################### Exercicio 2
 // Some todos os valores contidos no array e imprima o resultado:
 // let soma=0;
@@ -13,6 +20,8 @@
 //     soma+=numbers[i];
 // }
 // console.log(soma)
+
+
 
 // ################################### Exercicio 3
 //  Calcule e imprima a média aritmética dos valores contidos no array:
