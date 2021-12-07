@@ -1,0 +1,240 @@
+<!-- <main id="paiDoPai">
+  <section id="pai">
+    <section id="primeiroFilho"></section>
+    <section id="elementoOndeVoceEsta">
+      <section id="primeiroFilhoDoFilho"></section>
+      <section id="segundoEUltimoFilhoDoFilho"></section>
+    </section>
+    Atenção!
+    <section id="terceiroFilho"></section>
+    <section id="quartoEUltimoFilho"></section>
+  </section>
+  <script>
+    // BUSCANDO ELEMENTOS
+    // 1.Acesse o elemento elementoOndeVoceEsta
+    const elementoOndeVoceEsta = document.getElementById(
+      "elementoOndeVoceEsta"
+    );
+    // 2.Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+    const pai = elementoOndeVoceEsta.parentElement;
+    pai.style.color = "green";
+    // 3.Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+    const primeiroFilhoDoFilho = document.getElementById(
+      "primeiroFilhoDoFilho"
+    );
+    primeiroFilhoDoFilho.innerText = "Hoje é domingo!!!";
+    // 4.Acesse o primeiroFilho a partir de pai .
+    const primeiroFilho = pai.firstElementChild;
+    //  5.Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta
+    const primeiroFilho2 = elementoOndeVoceEsta.previousElementSibling;
+    // 6.Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta
+    const text = elementoOndeVoceEsta.nextSibling;
+    // 7.Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta
+    const terceiroFilho = elementoOndeVoceEsta.nextElementSibling;
+    // 8.Agora acesse o terceiroFilho a partir de pai.
+    const terceiroFilho2 = pai.lastElementChild.previousElementSibling;
+
+    // CRIANDO ELEMENTOS
+    // 1.Crie um irmão para elementoOndeVoceEsta .
+    let criaIrmao = document.createElement("section");
+    criaIrmao.id = "irmaoElementoOndeVoceEsta";
+    pai.appendChild(criaIrmao);
+    // 2.Crie um filho para elementoOndeVoceEsta .
+    let fihoelementoOndeVoceEsta = document.createElement("section");
+    fihoelementoOndeVoceEsta.id = "fihoelementoOndeVoceEsta";
+    elementoOndeVoceEsta.appendChild(fihoelementoOndeVoceEsta);
+    // 3.Crie um filho para primeiroFilhoDoFilho .
+    // variavel primeiroFilhoDoFilho ja declarada acima
+    const filhoPrimeiroFilhoDoFilho2 = document.createElement("section");
+    filhoPrimeiroFilhoDoFilho2.id = "filhoPrimeiroFilhoDoFilho2";
+    primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho2);
+    // 4.A partir desse filho criado, acesse terceiroFilho .
+    const terceiroFilho3 =
+      filhoPrimeiroFilhoDoFilho2.parentElement.parentElement.nextElementSibling;
+    console.log(terceiroFilho3);
+
+    // REMOVENDO ELEMENTOS
+    // Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+    let apagarFilho = document.getElementById("primeiroFilho");
+    pai.removeChild(apagarFilho);
+
+    let apagaSegundoEUltimoFilhoDoFilho = document.getElementById(
+      "segundoEUltimoFilhoDoFilho"
+    );
+    elementoOndeVoceEsta.removeChild(apagaSegundoEUltimoFilhoDoFilho);
+
+    let apagaTerceiroFilho = document.getElementById("terceiroFilho");
+    pai.removeChild(apagaTerceiroFilho);
+
+    let apagafihoelementoOndeVoceEsta = document.getElementById(
+      "fihoelementoOndeVoceEsta"
+    );
+    elementoOndeVoceEsta.removeChild(apagafihoelementoOndeVoceEsta);
+  </script>
+</main> -->
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@ APROFUNDANDO O CONHECIMENTO @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+      // 1.Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body ;
+      function adicionar(corpo, elemento) {
+        let elementoCorpo = document.querySelector(corpo);
+        let adicionarElemento = document.createElement(elemento);
+        elementoCorpo.appendChild(adicionarElemento);
+      }
+      adicionar("body", "h1");
+      adicionar("body", "main");
+
+      function addTextoH1(elementoH1) {
+        let titulo = document.querySelector(elementoH1);
+        titulo.innerText = "Exercício 5.2 - JavaScript DOM";
+      }
+      addTextoH1("h1");
+
+      // 2.Adicione a tag main com a classe main-content como filho da tag body ;
+      function addClasseMain(elementoMain) {
+        const principal = document.querySelector(elementoMain);
+        principal.className = "main-content";
+      }
+      addClasseMain("main");
+
+      // 3.Adicione a tag section com a classe center-content como filho da tag main criada no passo 2;
+      function addSection(pai, elementoParaAdicionar) {
+        let elementoMainCriado = document.querySelector(pai);
+        let adicionaElem = document.createElement(elementoParaAdicionar);
+        elementoMainCriado.appendChild(adicionaElem);
+      }
+      addSection("main", "section");
+      addSection("main", "section");
+      addSection("main", "section");
+      addSection("main", "h3");
+      addSection("main", "h3");
+      addSection("main", "h3");
+      function addSectionCenter(primeiraSection) {
+        let sectionCenter = document.querySelector(primeiraSection);
+        sectionCenter.className = "center-content";
+      }
+      addSectionCenter("section");
+
+      // 4.Adicione a tag p como filho do section criado no passo 3 e coloque algum texto;
+      function addTag(sectionPrimeira, addSectionCenter) {
+        let filhoSectionCenter = document.querySelector(sectionPrimeira);
+        let adicionaTagP = document.createElement(addSectionCenter);
+        filhoSectionCenter.appendChild(adicionaTagP);
+      }
+      addTag("section", "p");
+      function textoTagP(tagP) {
+        let addTextoP = document.querySelector(tagP);
+        addTextoP.innerText = "Algum texto escrito aqui.";
+      }
+      textoTagP("p");
+      // 5.Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
+      function addClassSectionLeft(primeiraSection) {
+        let localizaPrimeiraSection = document.querySelector(primeiraSection);
+        localizaPrimeiraSection.nextElementSibling.className = "left-content";
+      }
+      addClassSectionLeft(".center-content");
+      // 6.Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
+      function addClassSectionRight(segundaSection) {
+        let localizaSegundaSection = document.querySelector(segundaSection);
+        localizaSegundaSection.nextElementSibling.className = "right-content";
+      }
+      addClassSectionRight(".left-content");
+
+      // 7.Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do section criado no passo 5;
+      function addImg(addSectionLeft, elementoNovo) {
+        let imgFilho = document.querySelector(addSectionLeft);
+        let elementoImg = document.createElement(elementoNovo);
+        elementoImg.src = "https://picsum.photos/200";
+        elementoImg.className = "small-image";
+        imgFilho.appendChild(elementoImg);
+      }
+      addImg(".left-content", "img");
+      // 8.Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um , dois , três , ... como valores da lista. Essa lista deve ser filha do section criado no passo 6;
+      function addListaUl(naoOredenada, sectionPai, topicos) {
+        let elementoUl = document.createElement(naoOredenada);
+        let sectionRight = document.querySelector(sectionPai);
+        sectionRight.appendChild(elementoUl);
+        const arrNum = [
+          "um",
+          "dois",
+          "três",
+          "quatro",
+          "cinco",
+          "seis",
+          "sete",
+          "oito",
+          "nove",
+          "dez",
+        ];
+        for (let i in arrNum) {
+          let elementoLi = document.createElement(topicos);
+          elementoLi.innerHTML = arrNum[i];
+          elementoUl.appendChild(elementoLi);
+        }
+      }
+      addListaUl("ul", ".right-content", "li");
+      // 9.Adicione 3 tags h3 , todas sendo filhas do main criado no passo 2.
+      // todos filhos do main estao no tópico 2.
+    </script>
+  </body>
+</html>
