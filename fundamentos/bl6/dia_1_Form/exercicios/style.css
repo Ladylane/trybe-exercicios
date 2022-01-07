@@ -1,0 +1,17 @@
+.pessoais {
+  padding: 5px;
+}
+div{
+    padding: 5px;
+}
+
+.flex-container {
+    display: flex;
+  }
+/* #dInicio:invalid{
+    border: 2px solid red;
+}
+
+#dInicio:invalid:focus{
+    background-color: royalblue;
+} */
